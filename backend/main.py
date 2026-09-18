@@ -17,8 +17,11 @@ app = FastAPI(title="Grievance AI Microservice")
 origins = [
     "http://localhost:5173", # Vite default
     "http://localhost:3000",
-    # Add deployed frontend URL here
 ]
+
+deployed_origin = os.environ.get("FRONTEND_URL")
+if deployed_origin:
+    origins.append(deployed_origin)
 
 app.add_middleware(
     CORSMiddleware,
