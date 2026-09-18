@@ -97,7 +97,6 @@ Respond ONLY with a valid JSON object matching this schema:
             }
         except Exception as e:
             logging.error(f"Groq API failed, falling back to rule-based: {e}")
-            print(f"DEBUG: Groq exception: {e}") # Bug 1 temporary debug log
             
     # Fallback Rule-Based (if Groq isn't configured or fails)
     text_lower = text.lower()

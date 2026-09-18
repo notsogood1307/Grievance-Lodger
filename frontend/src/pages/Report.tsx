@@ -39,7 +39,7 @@ export default function Report() {
         const filePath = `${user.id}/${fileName}`;
 
         const { error: uploadError } = await supabase.storage
-          .from('grievances') // or 'grievance-images' as per schema
+          .from('grievance-images')
           .upload(filePath, file);
 
         if (uploadError) throw uploadError;
